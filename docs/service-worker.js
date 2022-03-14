@@ -1,33 +1,34 @@
 const build = [
-  "/twitch_follower/_app/start-915cb0fd.js",
-  "/twitch_follower/_app/pages/__layout.svelte-57b7d0b9.js",
-  "/twitch_follower/_app/assets/pages/__layout.svelte-5b1db7d5.css",
-  "/twitch_follower/_app/error.svelte-396e4bac.js",
-  "/twitch_follower/_app/pages/index.svelte-1250e8e9.js",
-  "/twitch_follower/_app/pages/recent-videos.svelte-a9e81ab3.js",
-  "/twitch_follower/_app/assets/pages/recent-videos.svelte-fc0820dc.css",
-  "/twitch_follower/_app/pages/settings.svelte-fdd3f010.js",
-  "/twitch_follower/_app/pages/follows/_uid_-_uname_.svelte-1807aa6e.js",
-  "/twitch_follower/_app/pages/streams/_uid_-_uname_.svelte-fb4ff96c.js",
-  "/twitch_follower/_app/pages/videos/_uid_-_uname_.svelte-4ffa2d1f.js",
-  "/twitch_follower/_app/pages/games.svelte-9767626b.js",
-  "/twitch_follower/_app/assets/pages/games.svelte-6b3e0479.css",
-  "/twitch_follower/_app/pages/test.svelte-edc5935d.js",
-  "/twitch_follower/_app/chunks/vendor-d20115e3.js",
-  "/twitch_follower/_app/chunks/singletons-d1fb5791.js",
-  "/twitch_follower/_app/chunks/navigation-076a75e1.js",
-  "/twitch_follower/_app/chunks/stores-7645a550.js",
-  "/twitch_follower/_app/chunks/stores-cf2b4674.js",
-  "/twitch_follower/_app/chunks/Follows-2af44860.js",
-  "/twitch_follower/_app/chunks/Videos-65e27bdb.js",
-  "/twitch_follower/_app/chunks/StreamsSelect-3aa0ad19.js"
+  "/twitch-follower/_app/start-4779dbc0.js",
+  "/twitch-follower/_app/pages/__layout.svelte-b3a9e9b7.js",
+  "/twitch-follower/_app/assets/pages/__layout.svelte-5b1db7d5.css",
+  "/twitch-follower/_app/error.svelte-396e4bac.js",
+  "/twitch-follower/_app/pages/index.svelte-0c3cc659.js",
+  "/twitch-follower/_app/pages/recent-videos.svelte-a61ee2d6.js",
+  "/twitch-follower/_app/assets/pages/recent-videos.svelte-fc0820dc.css",
+  "/twitch-follower/_app/pages/settings.svelte-fdd3f010.js",
+  "/twitch-follower/_app/pages/follows/_uid_-_uname_.svelte-2806fd44.js",
+  "/twitch-follower/_app/pages/streams/_uid_-_uname_.svelte-3b708d6a.js",
+  "/twitch-follower/_app/pages/videos/_uid_-_uname_.svelte-b157ebaf.js",
+  "/twitch-follower/_app/pages/games.svelte-b994ee24.js",
+  "/twitch-follower/_app/assets/pages/games.svelte-6b3e0479.css",
+  "/twitch-follower/_app/pages/test.svelte-edc5935d.js",
+  "/twitch-follower/_app/chunks/vendor-d20115e3.js",
+  "/twitch-follower/_app/chunks/singletons-d1fb5791.js",
+  "/twitch-follower/_app/chunks/navigation-076a75e1.js",
+  "/twitch-follower/_app/chunks/stores-7645a550.js",
+  "/twitch-follower/_app/chunks/stores-cf2b4674.js",
+  "/twitch-follower/_app/chunks/Follows-b233456b.js",
+  "/twitch-follower/_app/chunks/Videos-f1bbc380.js",
+  "/twitch-follower/_app/chunks/StreamsSelect-eb208caf.js"
 ];
 const files = [
-  "/twitch_follower/.nojekyll",
-  "/twitch_follower/favicon.png",
-  "/twitch_follower/mainifest.json"
+  "/twitch-follower/.nojekyll",
+  "/twitch-follower/404.html",
+  "/twitch-follower/favicon.png",
+  "/twitch-follower/mainifest.json"
 ];
-const version = "1647295354416";
+const version = "1647307500425";
 Promise.resolve();
 const fetchJson = async (url, headers) => {
   const res = await fetch(url, { headers });
