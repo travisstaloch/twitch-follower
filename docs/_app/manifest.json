@@ -1,0 +1,193 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-915cb0fd.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_singletons-d1fb5791.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/index.svelte",
+      "src/routes/recent-videos.svelte",
+      "src/routes/settings.svelte",
+      "src/routes/follows/[uid]-[uname].svelte",
+      "src/routes/streams/[uid]-[uname].svelte",
+      "src/routes/videos/[uid]-[uname].svelte",
+      "src/routes/games.svelte",
+      "src/routes/test.svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-57b7d0b9.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_navigation-076a75e1.js",
+      "_stores-7645a550.js",
+      "_stores-cf2b4674.js",
+      "_singletons-d1fb5791.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-5b1db7d5.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-396e4bac.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-1250e8e9.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_Follows-2af44860.js",
+      "_stores-cf2b4674.js"
+    ]
+  },
+  "src/routes/recent-videos.svelte": {
+    "file": "pages/recent-videos.svelte-a9e81ab3.js",
+    "src": "src/routes/recent-videos.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_stores-cf2b4674.js",
+      "_Videos-65e27bdb.js",
+      "_stores-7645a550.js"
+    ],
+    "css": [
+      "assets/pages/recent-videos.svelte-fc0820dc.css"
+    ]
+  },
+  "src/routes/settings.svelte": {
+    "file": "pages/settings.svelte-fdd3f010.js",
+    "src": "src/routes/settings.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_stores-cf2b4674.js"
+    ]
+  },
+  "src/routes/follows/[uid]-[uname].svelte": {
+    "file": "pages/follows/_uid_-_uname_.svelte-1807aa6e.js",
+    "src": "src/routes/follows/[uid]-[uname].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_navigation-076a75e1.js",
+      "_stores-7645a550.js",
+      "_Follows-2af44860.js",
+      "_stores-cf2b4674.js",
+      "_singletons-d1fb5791.js"
+    ]
+  },
+  "src/routes/streams/[uid]-[uname].svelte": {
+    "file": "pages/streams/_uid_-_uname_.svelte-fb4ff96c.js",
+    "src": "src/routes/streams/[uid]-[uname].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_navigation-076a75e1.js",
+      "_stores-7645a550.js",
+      "_StreamsSelect-3aa0ad19.js",
+      "_stores-cf2b4674.js",
+      "_singletons-d1fb5791.js"
+    ]
+  },
+  "src/routes/videos/[uid]-[uname].svelte": {
+    "file": "pages/videos/_uid_-_uname_.svelte-4ffa2d1f.js",
+    "src": "src/routes/videos/[uid]-[uname].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_stores-7645a550.js",
+      "_Videos-65e27bdb.js",
+      "_stores-cf2b4674.js"
+    ]
+  },
+  "src/routes/games.svelte": {
+    "file": "pages/games.svelte-9767626b.js",
+    "src": "src/routes/games.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_stores-cf2b4674.js",
+      "_StreamsSelect-3aa0ad19.js"
+    ],
+    "css": [
+      "assets/pages/games.svelte-6b3e0479.css"
+    ]
+  },
+  "src/routes/test.svelte": {
+    "file": "pages/test.svelte-edc5935d.js",
+    "src": "src/routes/test.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-d20115e3.js"
+    ]
+  },
+  "_vendor-d20115e3.js": {
+    "file": "chunks/vendor-d20115e3.js"
+  },
+  "_singletons-d1fb5791.js": {
+    "file": "chunks/singletons-d1fb5791.js"
+  },
+  "_navigation-076a75e1.js": {
+    "file": "chunks/navigation-076a75e1.js",
+    "imports": [
+      "_singletons-d1fb5791.js"
+    ]
+  },
+  "_stores-7645a550.js": {
+    "file": "chunks/stores-7645a550.js",
+    "imports": [
+      "_vendor-d20115e3.js"
+    ]
+  },
+  "_stores-cf2b4674.js": {
+    "file": "chunks/stores-cf2b4674.js",
+    "imports": [
+      "_vendor-d20115e3.js"
+    ]
+  },
+  "_Follows-2af44860.js": {
+    "file": "chunks/Follows-2af44860.js",
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_stores-cf2b4674.js"
+    ]
+  },
+  "_Videos-65e27bdb.js": {
+    "file": "chunks/Videos-65e27bdb.js",
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_stores-7645a550.js",
+      "_stores-cf2b4674.js"
+    ]
+  },
+  "_StreamsSelect-3aa0ad19.js": {
+    "file": "chunks/StreamsSelect-3aa0ad19.js",
+    "imports": [
+      "_vendor-d20115e3.js",
+      "_stores-cf2b4674.js"
+    ]
+  }
+}
