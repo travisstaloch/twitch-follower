@@ -1,26 +1,28 @@
 const build = [
-  "/twitch-follower/_app/start-4779dbc0.js",
-  "/twitch-follower/_app/pages/__layout.svelte-b3a9e9b7.js",
-  "/twitch-follower/_app/assets/pages/__layout.svelte-5b1db7d5.css",
-  "/twitch-follower/_app/error.svelte-396e4bac.js",
-  "/twitch-follower/_app/pages/index.svelte-0c3cc659.js",
-  "/twitch-follower/_app/pages/recent-videos.svelte-a61ee2d6.js",
+  "/twitch-follower/_app/start-8015c79e.js",
+  "/twitch-follower/_app/pages/__layout.svelte-3cfaf41b.js",
+  "/twitch-follower/_app/assets/pages/__layout.svelte-67ad537e.css",
+  "/twitch-follower/_app/error.svelte-9403e6fc.js",
+  "/twitch-follower/_app/pages/index.svelte-09b81e6e.js",
+  "/twitch-follower/_app/pages/recent-videos.svelte-0c824004.js",
   "/twitch-follower/_app/assets/pages/recent-videos.svelte-fc0820dc.css",
-  "/twitch-follower/_app/pages/settings.svelte-fdd3f010.js",
-  "/twitch-follower/_app/pages/follows/_uid_-_uname_.svelte-2806fd44.js",
-  "/twitch-follower/_app/pages/streams/_uid_-_uname_.svelte-3b708d6a.js",
-  "/twitch-follower/_app/pages/videos/_uid_-_uname_.svelte-b157ebaf.js",
-  "/twitch-follower/_app/pages/games.svelte-b994ee24.js",
+  "/twitch-follower/_app/pages/settings.svelte-a1e04181.js",
+  "/twitch-follower/_app/pages/follows/_uid_-_uname_.svelte-198694c7.js",
+  "/twitch-follower/_app/pages/streams/_uid_-_uname_.svelte-5425e65b.js",
+  "/twitch-follower/_app/pages/videos/_uid_-_uname_.svelte-c5023600.js",
+  "/twitch-follower/_app/pages/games.svelte-057ba8f9.js",
   "/twitch-follower/_app/assets/pages/games.svelte-6b3e0479.css",
-  "/twitch-follower/_app/pages/test.svelte-edc5935d.js",
-  "/twitch-follower/_app/chunks/vendor-d20115e3.js",
+  "/twitch-follower/_app/pages/test.svelte-261230c0.js",
+  "/twitch-follower/_app/chunks/vendor-611aba13.js",
   "/twitch-follower/_app/chunks/singletons-d1fb5791.js",
+  "/twitch-follower/_app/chunks/stores-dbe2d455.js",
   "/twitch-follower/_app/chunks/navigation-076a75e1.js",
-  "/twitch-follower/_app/chunks/stores-7645a550.js",
-  "/twitch-follower/_app/chunks/stores-cf2b4674.js",
-  "/twitch-follower/_app/chunks/Follows-b233456b.js",
-  "/twitch-follower/_app/chunks/Videos-f1bbc380.js",
-  "/twitch-follower/_app/chunks/StreamsSelect-eb208caf.js"
+  "/twitch-follower/_app/chunks/stores-76a0209b.js",
+  "/twitch-follower/_app/chunks/util-b72d8139.js",
+  "/twitch-follower/_app/chunks/Follows-9efa8606.js",
+  "/twitch-follower/_app/chunks/Refresh-58a37abd.js",
+  "/twitch-follower/_app/chunks/Videos-d8590486.js",
+  "/twitch-follower/_app/chunks/StreamsSelect-a13bdacf.js"
 ];
 const files = [
   "/twitch-follower/.nojekyll",
@@ -28,12 +30,25 @@ const files = [
   "/twitch-follower/favicon.png",
   "/twitch-follower/mainifest.json"
 ];
-const version = "1647307500425";
+const version = "1651602750589";
+function noop() {
+}
+function safe_not_equal(a, b) {
+  return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
+}
+function subscribe(store, ...callbacks) {
+  if (store == null) {
+    return noop;
+  }
+  const unsub = store.subscribe(...callbacks);
+  return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
+}
+function get_store_value(store) {
+  let value;
+  subscribe(store, (_) => value = _)();
+  return value;
+}
 Promise.resolve();
-const fetchJson = async (url, headers) => {
-  const res = await fetch(url, { headers });
-  return await res.json();
-};
 const recentVideosProgressSegments = 10;
 function indexFor(element, array, comparer, start, end) {
   if (array.length === 0)
@@ -58,15 +73,134 @@ function indexFor(element, array, comparer, start, end) {
 function numberCompare(a, b) {
   return Math.sign(a - b);
 }
-const env = {
-  oauth: "9qgyh0cztae6970iaelbq3i810fbj0",
-  clientid: "eav60ifvqn9bzeuwucm522ddp6czja"
+const subscriber_queue = [];
+function writable(value, start = noop) {
+  let stop;
+  const subscribers = /* @__PURE__ */ new Set();
+  function set(new_value) {
+    if (safe_not_equal(value, new_value)) {
+      value = new_value;
+      if (stop) {
+        const run_queue = !subscriber_queue.length;
+        for (const subscriber of subscribers) {
+          subscriber[1]();
+          subscriber_queue.push(subscriber, value);
+        }
+        if (run_queue) {
+          for (let i = 0; i < subscriber_queue.length; i += 2) {
+            subscriber_queue[i][0](subscriber_queue[i + 1]);
+          }
+          subscriber_queue.length = 0;
+        }
+      }
+    }
+  }
+  function update(fn) {
+    set(fn(value));
+  }
+  function subscribe2(run, invalidate = noop) {
+    const subscriber = [run, invalidate];
+    subscribers.add(subscriber);
+    if (subscribers.size === 1) {
+      stop = start(set) || noop;
+    }
+    run(value);
+    return () => {
+      subscribers.delete(subscriber);
+      if (subscribers.size === 0) {
+        stop();
+        stop = null;
+      }
+    };
+  }
+  return { set, update, subscribe: subscribe2 };
+}
+let localStore = (key, initial) => {
+};
+const initLocalStore = () => {
+  localStore = (key, initial) => {
+    if (!localStorage)
+      return;
+    const toString = (value) => JSON.stringify(value, null, 2);
+    if (localStorage.getItem(key) === null) {
+      localStorage.setItem(key, toString(initial));
+    }
+    const saved = JSON.parse(localStorage.getItem(key));
+    const { subscribe: subscribe2, set, update } = writable(saved);
+    return {
+      subscribe: subscribe2,
+      set: (value) => {
+        localStorage.setItem(key, toString(value));
+        return set(value);
+      },
+      update
+    };
+  };
+};
+let dark = null;
+const initDark = () => {
+  try {
+    dark = localStore("dark", prefersDark());
+    dark.subscribe((val) => {
+      localStorage.setItem("dark", JSON.stringify(val));
+      setThemeDark(val);
+    });
+  } catch (e) {
+    console.error("initDark", e);
+  }
+};
+const toggleDark = () => {
+  dark.update((existing) => {
+    return !existing;
+  });
+};
+const getDark = () => get_store_value(dark);
+let user = writable(null);
+const prefersDark = () => {
+  try {
+    return window && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  } catch {
+    return false;
+  }
+};
+const setThemeDark = (dark2) => {
+  if (!document)
+    return;
+  let dataTheme = document.documentElement.attributes["data-theme"];
+  dataTheme.value = dark2 ? "dark" : "light";
+};
+let settings = writable(null);
+const storesInit = () => {
+  initLocalStore();
+  settings = localStore("settings", {
+    external_program: {
+      exec_server_url: "http://localhost:9000/exec",
+      program: "runstreamlink.sh"
+    },
+    twitch_proxy_api: {
+      url: "http://localhost:9000/api/twitch"
+    }
+  });
+  initDark();
+  const mql = window.matchMedia("(prefers-color-scheme: dark)");
+  mql.addEventListener("change", () => {
+    toggleDark();
+    setThemeDark(getDark());
+  });
+  user.set(JSON.parse(localStorage.getItem("user")));
+  user.subscribe((val) => {
+    localStorage.user = JSON.stringify(val);
+  });
+};
+const fetchJson = async (url) => {
+  const _settings = get_store_value(settings);
+  if (!_settings) {
+    storesInit();
+  }
+  const res = await fetch(`${_settings.twitch_proxy_api.url}?url=${encodeURIComponent(url)}`);
+  return await res.json();
 };
 try {
-  const headers = {
-    Authorization: "Bearer " + env.oauth,
-    "Client-Id": env.clientid
-  };
   const log = (...args) => {
     const show_debug = true;
     if (show_debug)
@@ -95,7 +229,7 @@ try {
       let follow_i = 0;
       for (const follow of allFollows.data) {
         const uid = follow.to_id;
-        let videos = await fetchJson(`https://api.twitch.tv/helix/videos?first=100&user_id=${uid}&type=archive`, headers);
+        let videos = await fetchJson(`https://api.twitch.tv/helix/videos?first=100&user_id=${uid}&type=archive`);
         for (const video of videos.data) {
           let date = new Date(video.created_at);
           let index = indexFor({ date, video }, recent_videos, (b, a) => numberCompare(a.date ? a.date.valueOf() : 0, b.date ? b.date.valueOf() : 0));

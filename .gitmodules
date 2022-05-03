@@ -1,0 +1,3 @@
+[submodule "local-server/deps/apple_pie"]
+	path = local-server/deps/apple_pie
+	url = https://github.com/Luukdegram/apple_pie
