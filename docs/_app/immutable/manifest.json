@@ -1,0 +1,240 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-c65f9b1d.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_index-2c9e022f.js",
+      "_singletons-d1fb5791.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/follows/[uid]-[uname].svelte",
+      "src/routes/games.svelte",
+      "src/routes/index.svelte",
+      "src/routes/recent-videos.svelte",
+      "src/routes/settings.svelte",
+      "src/routes/streams/[uid]-[uname].svelte",
+      "src/routes/test.svelte",
+      "src/routes/videos/[uid]-[uname].svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-18490136.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_navigation-076a75e1.js",
+      "_stores-b9e3c672.js",
+      "_stores-201ea01f.js",
+      "_util-2ac49776.js",
+      "_singletons-d1fb5791.js",
+      "_index-2c9e022f.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-343dd8a3.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-fa03cc82.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js"
+    ]
+  },
+  "src/routes/follows/[uid]-[uname].svelte": {
+    "file": "pages/follows/_uid_-_uname_.svelte-5bf6d7d9.js",
+    "src": "src/routes/follows/[uid]-[uname].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_navigation-076a75e1.js",
+      "_stores-b9e3c672.js",
+      "_Follows-afe97b95.js",
+      "_stores-201ea01f.js",
+      "_singletons-d1fb5791.js",
+      "_util-2ac49776.js",
+      "_index-2c9e022f.js"
+    ]
+  },
+  "src/routes/games.svelte": {
+    "file": "pages/games.svelte-e197d1de.js",
+    "src": "src/routes/games.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_navigation-076a75e1.js",
+      "_stores-201ea01f.js",
+      "_util-2ac49776.js",
+      "_StreamsSelect-879a7960.js",
+      "_singletons-d1fb5791.js",
+      "_index-2c9e022f.js",
+      "_Refresh-e04be643.js"
+    ],
+    "css": [
+      "assets/pages/games.svelte-6a9582c2.css"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-d9fd6b47.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_navigation-076a75e1.js",
+      "_Follows-afe97b95.js",
+      "_stores-201ea01f.js",
+      "_singletons-d1fb5791.js",
+      "_util-2ac49776.js",
+      "_index-2c9e022f.js"
+    ]
+  },
+  "src/routes/recent-videos.svelte": {
+    "file": "pages/recent-videos.svelte-c91a271f.js",
+    "src": "src/routes/recent-videos.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_stores-201ea01f.js",
+      "_util-2ac49776.js",
+      "_Refresh-e04be643.js",
+      "_Videos-ad99043f.js",
+      "_index-2c9e022f.js",
+      "_stores-b9e3c672.js"
+    ],
+    "css": [
+      "assets/pages/recent-videos.svelte-0576b9dd.css"
+    ]
+  },
+  "src/routes/settings.svelte": {
+    "file": "pages/settings.svelte-6cdbd724.js",
+    "src": "src/routes/settings.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_stores-201ea01f.js",
+      "_index-2c9e022f.js"
+    ]
+  },
+  "src/routes/streams/[uid]-[uname].svelte": {
+    "file": "pages/streams/_uid_-_uname_.svelte-c20f2ff0.js",
+    "src": "src/routes/streams/[uid]-[uname].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_navigation-076a75e1.js",
+      "_stores-b9e3c672.js",
+      "_StreamsSelect-879a7960.js",
+      "_stores-201ea01f.js",
+      "_singletons-d1fb5791.js",
+      "_util-2ac49776.js",
+      "_Refresh-e04be643.js",
+      "_index-2c9e022f.js"
+    ]
+  },
+  "src/routes/test.svelte": {
+    "file": "pages/test.svelte-a1890244.js",
+    "src": "src/routes/test.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js"
+    ]
+  },
+  "src/routes/videos/[uid]-[uname].svelte": {
+    "file": "pages/videos/_uid_-_uname_.svelte-6f603dd7.js",
+    "src": "src/routes/videos/[uid]-[uname].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-b2b37e39.js",
+      "_navigation-076a75e1.js",
+      "_stores-b9e3c672.js",
+      "_Videos-ad99043f.js",
+      "_stores-201ea01f.js",
+      "_singletons-d1fb5791.js",
+      "_util-2ac49776.js",
+      "_index-2c9e022f.js"
+    ]
+  },
+  "_index-b2b37e39.js": {
+    "file": "chunks/index-b2b37e39.js"
+  },
+  "_index-2c9e022f.js": {
+    "file": "chunks/index-2c9e022f.js",
+    "imports": [
+      "_index-b2b37e39.js"
+    ]
+  },
+  "_singletons-d1fb5791.js": {
+    "file": "chunks/singletons-d1fb5791.js"
+  },
+  "_stores-201ea01f.js": {
+    "file": "chunks/stores-201ea01f.js",
+    "imports": [
+      "_index-2c9e022f.js",
+      "_index-b2b37e39.js"
+    ]
+  },
+  "_navigation-076a75e1.js": {
+    "file": "chunks/navigation-076a75e1.js",
+    "imports": [
+      "_singletons-d1fb5791.js"
+    ]
+  },
+  "_stores-b9e3c672.js": {
+    "file": "chunks/stores-b9e3c672.js",
+    "imports": [
+      "_index-b2b37e39.js"
+    ]
+  },
+  "_util-2ac49776.js": {
+    "file": "chunks/util-2ac49776.js",
+    "imports": [
+      "_index-b2b37e39.js"
+    ]
+  },
+  "_Follows-afe97b95.js": {
+    "file": "chunks/Follows-afe97b95.js",
+    "imports": [
+      "_index-b2b37e39.js",
+      "_util-2ac49776.js"
+    ]
+  },
+  "_StreamsSelect-879a7960.js": {
+    "file": "chunks/StreamsSelect-879a7960.js",
+    "imports": [
+      "_index-b2b37e39.js",
+      "_stores-201ea01f.js",
+      "_util-2ac49776.js",
+      "_Refresh-e04be643.js"
+    ]
+  },
+  "_Refresh-e04be643.js": {
+    "file": "chunks/Refresh-e04be643.js",
+    "imports": [
+      "_index-b2b37e39.js"
+    ]
+  },
+  "_Videos-ad99043f.js": {
+    "file": "chunks/Videos-ad99043f.js",
+    "imports": [
+      "_index-b2b37e39.js",
+      "_stores-b9e3c672.js",
+      "_stores-201ea01f.js",
+      "_util-2ac49776.js"
+    ]
+  }
+}
